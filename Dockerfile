@@ -35,3 +35,10 @@ RUN composer install
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
+
+COPY init.sh /usr/local/bin/init.sh
+
+RUN chmod +x /usr/local/bin/init.sh
+
+CMD ["/bin/bash", "-c", "/usr/local/bin/init.sh && apache2-foreground"]
