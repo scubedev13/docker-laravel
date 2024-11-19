@@ -24,7 +24,7 @@ services:
         MYSQL_ROOT_PASSWORD: rootpassword
         MYSQL_DATABASE: laravel
     ports:
-      - "3307:3306"  # Make sure to map the right MySQL port
+      - "3309:3309"  # Make sure to map the right MySQL port
     volumes:
       - dbdata:/var/lib/mysql
 
